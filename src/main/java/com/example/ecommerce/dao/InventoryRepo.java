@@ -4,7 +4,7 @@ import com.example.ecommerce.model.SKU;
 
 public interface InventoryRepo {
 
-    void addSKU(SKU sku);
+    SKU addSKU(SKU sku);
 
     void updateQuantity(SKU sku, int quantity);
 }

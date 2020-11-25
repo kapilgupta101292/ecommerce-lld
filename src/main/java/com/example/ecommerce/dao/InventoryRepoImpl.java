@@ -16,8 +16,9 @@ public class InventoryRepoImpl implements InventoryRepo {
     }
 
     @Override
-    public void addSKU(SKU sku) {
+    public SKU addSKU(SKU sku) {
         inventory.put(sku.getProduct().getId(), sku);
+        return sku;
     }
 
     @Override

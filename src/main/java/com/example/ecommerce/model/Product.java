@@ -11,6 +11,4 @@ public class Product {
     private ProductCategory category;
     private double maximumRetailPrice;
     private double sellingPrice;
-
-
 }

@@ -1,10 +1,9 @@
 package com.example.ecommerce.model;
 
-import javax.persistence.Embeddable;
+import lombok.Data;
 
-@Embeddable
+@Data
 public class Address {
-
     private Long id;
     private boolean primary;
     private String streetAddress;

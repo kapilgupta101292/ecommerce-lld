@@ -15,9 +15,9 @@ public class OrderServiceImpl implements OrderService {
     PaymentService paymentService;
 
     @Override
-    public void createOrder(Order order) {
-
-        orderRepo.save(order);
+    public Order createOrder(Order order) {
+        order = orderRepo.save(order);
         paymentService.initiatePayment(order);
+        return order;
     }
 }

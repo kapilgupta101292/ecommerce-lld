@@ -12,11 +12,12 @@ public class OrderRepoImpl implements OrderRepo {
     Map<Long, Order> orders;
 
     OrderRepoImpl() {
-        this.orders = new HashMap<Long, Order>();
+        this.orders = new HashMap<>();
     }
 
     @Override
-    public void save(Order order) {
+    public Order save(Order order) {
         orders.put(order.getId(), order);
+        return order;
     }
 }
