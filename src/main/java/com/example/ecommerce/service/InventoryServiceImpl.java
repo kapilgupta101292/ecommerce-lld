@@ -5,6 +5,8 @@ import com.example.ecommerce.model.SKU;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InventoryServiceImpl implements InventoryService {
 
@@ -14,5 +16,10 @@ public class InventoryServiceImpl implements InventoryService {
     @Override
     public SKU addSKU(SKU sku) {
         return inventoryRepo.addSKU(sku);
+    }
+
+    @Override
+    public List<SKU> getSKUs() {
+        return inventoryRepo.getSKUs();
     }
 }

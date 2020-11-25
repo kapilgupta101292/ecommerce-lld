@@ -1,8 +1,11 @@
 package com.example.ecommerce.web;
 
 import com.example.ecommerce.model.Product;
+import com.example.ecommerce.model.SKU;
 import com.example.ecommerce.model.Search;
+import com.example.ecommerce.model.SearchCriteria;
 import com.example.ecommerce.service.CustomerService;
+import com.example.ecommerce.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -20,11 +23,11 @@ import java.util.List;
 public class SearchController {
 
     @Autowired
-    CustomerService customerService;
+    SearchService searchService;
 
     @PostMapping(produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Product>> search(@RequestBody Search cartItem) {
-        List<Product> products = new ArrayList<>(); // call to search service
-        return new ResponseEntity<>(products, HttpStatus.OK);
+    public ResponseEntity<List<SKU>> search(@RequestBody SearchCriteria criteria) {
+        List<SKU> skus = searchService.search(criteria);
+        return new ResponseEntity<>(skus, HttpStatus.OK);
     }
 }

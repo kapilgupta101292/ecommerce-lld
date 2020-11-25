@@ -4,6 +4,7 @@ import com.example.ecommerce.model.SKU;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -19,6 +20,11 @@ public class InventoryRepoImpl implements InventoryRepo {
     public SKU addSKU(SKU sku) {
         inventory.put(sku.getProduct().getId(), sku);
         return sku;
+    }
+
+    @Override
+    public List<SKU> getSKUs() {
+        return (List<SKU>) inventory.values();
     }
 
     @Override
